@@ -113,7 +113,7 @@ img{
 }
 
   /*========== Layout ==========*/
-.bg-container{
+.bd-container{
     max-width: 960px;
     width: calc(100% - 2rem);
     margin-left: var(--mb-2);
@@ -149,7 +149,7 @@ img{
         width: 100%;
         padding: 1.5rem 0 1rem;
         text-align: center;
-        background-color: var(--body-font);
+        background: var(--body-color);
         transition: .7s;
         box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
         border-radius: 0 0 1rem 1rem;
@@ -224,4 +224,77 @@ img{
 .show-scrollTop{
     visibility: visible;
     bottom: 1.5rem;
+}
+
+
+/*========== Home - Section ==========*/
+.home__container{
+    height: calc(100vh - var(--header-height));
+    align-content: center;
+}
+.home__title{
+    font-size: var(--biggest-font-size);
+    color: var(--first-color);
+    margin-bottom: var(--mb-1);
+}
+.home__subtitle{
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-4);
+}
+.home__img{
+    width: 300px;
+    justify-self: center;
+}
+
+
+/*========== Botones ==========*/
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: var(--container-color);
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    transition: .3s;    
+}
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+
+
+/*========== About us - Sobre nosotros ==========*/
+.about__data{
+    text-align: center;
+}
+.about__description{
+    margin-bottom: var(--mb-3);
+}
+.about__img{
+    width: 280px;
+    border-radius: .5rem;
+    justify-self: center;
+}
+
+
+/*========== Serivicios ==========*/
+.services__container{
+    row-gap: 2.5rem;
+    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+}
+.services__content{
+    text-align: center;
+}
+.services__img{
+    width: 64px;
+    height: 64px;
+    fill: var(--first-color);
+    margin-bottom: var(--mb-2);
+}
+.services__title{
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+}
+.services__description{
+    padding: 0 1.5rem;
 }
