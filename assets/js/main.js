@@ -51,6 +51,7 @@ const scrollActive = ()=>{
 }
 window.addEventListener('scroll', scrollActive);
 
+
 /* === === Cambiar la apariencia del Header al hacer scroll === === */
 const scrollHeader = ()=>{
     const nav = document.getElementById('header');
@@ -64,7 +65,6 @@ window.addEventListener('scroll', scrollHeader);
 
 
 /* === === Mostrar/Ocultar boton para volver arriba === === */
-
 const showScrollTop = ()=>{
     const scrollTop = document.getElementById('scroll-top');
 
@@ -75,3 +75,12 @@ const showScrollTop = ()=>{
     }
 }
 window.addEventListener('scroll', showScrollTop);
+
+
+/* === === Dark Theme === === */
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+
+themeButton.addEventListener('click', ()=>{
+    document.body.classList.toggle(darkTheme);
+});
