@@ -77,10 +77,51 @@ const showScrollTop = ()=>{
 window.addEventListener('scroll', showScrollTop);
 
 
-/* === === Dark Theme === === */
+/* === === Dark Theme - Persistir en el Local Storage === === */
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
+const iconTheme = 'bx-sun';
 
+// Leemos los valores de local storage
+selectedTheme = localStorage.getItem('selected-theme');
+selectedIcon = localStorage.getItem('selected-icon');
+
+// Comprobamos si exite algun tema guardado y defimos uno inicial
+if(selectedTheme){
+    document.body.classList[ selectedTheme === 'dark' ? 'add' : 'remove' ](darkTheme);
+    themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme);
+}
+
+// Obtener el thema actual
+getCurrentTheme = ()=> document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+getCurrentIcon =()=> themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun';
+
+
+// Cambiamo el tema al dar click y guardamos los cambios
 themeButton.addEventListener('click', ()=>{
     document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+
+});
+
+
+
+/* === === Dark Theme === === */
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 1500,
+    reset: false
+});
+
+sr.reveal(`.home__data, .home__img,
+            .about__data, .about__img,
+            .services__content, .menu__content,
+            .app__data, .app__img,
+            .contact__data, .contact__button,
+            .footer__content`,{
+    interval: 200
 });

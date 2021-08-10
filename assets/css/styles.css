@@ -273,7 +273,7 @@ img{
 .button{
     display: inline-block;
     background-color: var(--first-color);
-    color: var(--container-color);
+    color: #FFFFFF;
     padding: .75rem 1rem;
     border-radius: .5rem;
     transition: .3s;    
@@ -481,6 +481,12 @@ img{
     }
     .nav__toggle{
         display: none;
+    }
+
+    /* Icon theme */
+    .change-theme{
+        position: initial;
+        margin-left: var(--mb-2);
     }
 
     .home__container{
